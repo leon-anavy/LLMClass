@@ -12,14 +12,17 @@ LLMClass/
 ├── main.py                  # התוכנית הראשית
 ├── llmclass/                # הקוד שאתם כותבים
 │   ├── __init__.py
-│   └── tokenizer.py         # שבוע 2: פונקציות ה-Tokenizer
+│   ├── tokenizer.py         # שבוע 2: פונקציות ה-Tokenizer
+│   └── ngrams.py            # שבוע 3: מילוני N-Gram
 ├── data/
 │   ├── raw/                 # קבצי המקור. לא משנים אותם לעולם
 │   └── processed/           # כאן הקוד שומר את התוצאות
 ├── tests/
-│   └── check_tokenizer.py   # בדיקה עצמית
+│   ├── check_tokenizer.py   # בדיקה עצמית ל-Tokenizer
+│   └── check_ngrams.py      # בדיקה עצמית ל-N-Gram
 └── demos/
-    ├── tokenizer_demos.py    # ההדגמות מהשיעור
+    ├── tokenizer_demos.py   # ההדגמות משיעור הטוקניזציה
+    ├── ngram_demos.py       # ההדגמות משיעור ה-N-Gram
     ├── where_am_i.py        # מדפיס מאיפה פייתון רץ ומחפש
     └── try_import.py        # ניסוי: מתי ייבוא מצליח ומתי לא
 ```
@@ -37,12 +40,17 @@ LLMClass/
 
 ```
 python -m tests.check_tokenizer     # בדיקה עצמית: צריך להגיע ל-11 מתוך 11
-python main.py                      # מריץ על הקורפוס ושומר ל-data/processed/clean_text.txt
+python -m tests.check_ngrams        # בדיקה עצמית: צריך להגיע ל-12 מתוך 12
+python main.py                      # מנקה, שומר ל-data/processed/clean_text.txt ובונה מילוני N-Gram
 python demos/tokenizer_demos.py 4    # הדגמה של שלב 4 מהשיעור
+python demos/ngram_demos.py 5        # בניית מילון 2-Gram צעד אחר צעד
 ```
 
-## המשימה של השבוע
+## המשימות
 
-השלימו את כל ה-TODO בקובץ `llmclass/tokenizer.py`. אל תשנו שמות של פונקציות או פרמטרים.
+- **שבוע 2:** השלימו את כל ה-TODO בקובץ `llmclass/tokenizer.py`.
+- **שבוע 3:** השלימו את כל ה-TODO בקובץ `llmclass/ngrams.py`. מפתח הוא n-1 מילים מחוברות ברווח, והערך הוא רשימת כל המילים שבאו אחריהן, **כולל חזרות**.
 
-מה מגישים ואיך זה נבדק: **ASSIGNMENT.docx** (אותו תוכן גם ב-[ASSIGNMENT.md](ASSIGNMENT.md))
+בשני הקבצים: אל תשנו שמות של פונקציות או פרמטרים.
+
+הגשת ה-Tokenizer ואיך היא נבדקת: **ASSIGNMENT.docx** (אותו תוכן גם ב-[ASSIGNMENT.md](ASSIGNMENT.md))
