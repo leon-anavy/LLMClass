@@ -19,7 +19,7 @@ LLMClass/
 ├── tests/
 │   └── check_tokenizer.py   # בדיקה עצמית
 └── demos/
-    ├── lesson02_demos.py    # ההדגמות מהשיעור
+    ├── tokenizer_demos.py    # ההדגמות מהשיעור
     ├── where_am_i.py        # מדפיס מאיפה פייתון רץ ומחפש
     └── try_import.py        # ניסוי: מתי ייבוא מצליח ומתי לא
 ```
@@ -38,7 +38,7 @@ LLMClass/
 ```
 python -m tests.check_tokenizer     # בדיקה עצמית: צריך להגיע ל-11 מתוך 11
 python main.py                      # מריץ על הקורפוס ושומר ל-data/processed/clean_text.txt
-python demos/lesson02_demos.py 4    # הדגמה של שלב 4 מהשיעור
+python demos/tokenizer_demos.py 4    # הדגמה של שלב 4 מהשיעור
 ```
 
 ## המשימה של השבוע

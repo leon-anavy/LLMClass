@@ -2,8 +2,8 @@
 """
 הדגמות חיות לשיעור "ניקוי טקסט וטוקניזציה".
 כל שלב הוא פונקציה – מריצים אחת-אחת מול הכיתה:
-    python demos/lesson02_demos.py 3      (מריץ רק את שלב 3)
-    python demos/lesson02_demos.py        (מריץ הכל)
+    python demos/tokenizer_demos.py 3      (מריץ רק את שלב 3)
+    python demos/tokenizer_demos.py        (מריץ הכל)
 """
 import os
 import sys
