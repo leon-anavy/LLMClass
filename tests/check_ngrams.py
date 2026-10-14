@@ -48,7 +48,9 @@ def t_make_key():
 
 
 def t_bigrams_type():
-    expect(type(ng.build_bigrams(CAT)), dict)
+    result = ng.build_bigrams(["א", "ב"])
+    expect(type(result), dict)
+    expect(result, {"א": ["ב"]})
 
 
 def t_bigrams():
@@ -75,17 +77,18 @@ def t_last_word():
 def t_short():
     expect(ng.build_bigrams(["לבד"]), {})
     expect(ng.build_bigrams([]), {})
+    expect(ng.build_bigrams(["שתי", "מילים"]), {"שתי": ["מילים"]})
 
 
 def t_tokens_unchanged():
     tokens = list(CAT)
     result = ng.build_ngrams(tokens, 3)
-    expect(type(result), dict)
+    expect(len(result), 6)
     expect(tokens, CAT)
 
 
 def t_ngrams_2():
-    expect(type(ng.build_ngrams(CAT, 2)), dict)
+    expect(len(ng.build_ngrams(CAT, 2)), 5)
     expect(ng.build_ngrams(CAT, 2), ng.build_bigrams(CAT))
 
 
@@ -122,11 +125,11 @@ def t_next_words():
 
 tests = [
     ("make_key מחברת מילים ברווח", t_make_key),
-    ("build_bigrams מחזירה dict", t_bigrams_type),
+    ("build_bigrams על שתי מילים", t_bigrams_type),
     ("build_bigrams – הדוגמה מהשיעור", t_bigrams),
     ("חזרות נשמרות ברשימה", t_repeats_kept),
     ("המילה האחרונה לא נכנסת כמפתח", t_last_word),
-    ("רשימה קצרה מדי -> מילון ריק", t_short),
+    ("רשימה קצרה: מילון ריק או זוג אחד", t_short),
     ("הפונקציות לא משנות את רשימת הטוקנים", t_tokens_unchanged),
     ("build_ngrams עם n=2 זהה ל-build_bigrams", t_ngrams_2),
     ("build_ngrams עם n=3", t_ngrams_3),

@@ -7,11 +7,11 @@
 
 1. **הורדה:** היכנסו ל-`github.com/leon-anavy/LLMClass`, לחצו על הכפתור הירוק **Code** ובחרו **Download ZIP**.
 2. **חילוץ:** ב-Windows, קליק ימני על הקובץ ובחרו **Extract All** (חלץ הכל). ב-Mac, לחיצה כפולה על הקובץ.
-3. **שם התיקייה:** התיקייה שנוצרת נקראת `LLMClass-main`. שנו את השם שלה ל-`LLMClass`. אם בתוכה יש עוד תיקייה באותו שם, עבדו עם הפנימית: זו שרואים בה ישר את `main.py`.
-4. **קובץ הנתונים:** `main.py` רץ כרגע על קובץ הדוגמה `data/raw/sample_dirty.txt`, אז אין צורך להעתיק כלום. כשתקבלו קורפוס גדול יותר, שימו אותו ב-`data/raw` ועדכנו את `CORPUS_PATH` ב-`main.py`.
-5. **פתיחה:** ב-PyCharm בחרו בתפריט **File > Open**. סמנו את התיקייה `LLMClass` שיש בה את `main.py`, ולחצו **OK**. אם מופיעה שאלה, לחצו **Trust Project**.
+3. **שם התיקייה:** התיקייה שנוצרת נקראת `LLMClass-main`. שנו את השם שלה ל-`LLMClass`. אם בתוכה יש עוד תיקייה באותו שם, עבדו עם הפנימית: זו שרואים בה ישר את `main_tokenizer.py`.
+4. **קובץ הנתונים:** `main_tokenizer.py` רץ כרגע על קובץ הדוגמה `data/raw/sample_dirty.txt`, אז אין צורך להעתיק כלום. כשתקבלו קורפוס גדול יותר, שימו אותו ב-`data/raw` ועדכנו את `CORPUS_PATH` ב-`main_tokenizer.py`.
+5. **פתיחה:** ב-PyCharm בחרו בתפריט **File > Open**. סמנו את התיקייה `LLMClass` שיש בה את `main_tokenizer.py`, ולחצו **OK**. אם מופיעה שאלה, לחצו **Trust Project**.
 6. **Interpreter:** אם למטה מימין כתוב **No interpreter**, לחצו עליו ובחרו **Add New Interpreter > Add Local Interpreter > Virtualenv**, ואז **OK**. לא צריך להתקין שום חבילה.
-7. **הרצה:** קליק ימני על `tests/check_tokenizer.py` ובחרו **Run**. בשלד הריק אמור להופיע 0 מתוך 11, וזה תקין. גם `main.py` ייעצר בשלד הריק עם `TypeError`, כי הפונקציות עוד לא מחזירות כלום. זה יסתדר כשתממשו אותן.
+7. **הרצה:** קליק ימני על `tests/check_tokenizer.py` ובחרו **Run**. בשלד הריק אמור להופיע 0 מתוך 11, וזה תקין. גם `main_tokenizer.py` ירוץ בשלד הריק, אבל ידפיס רשימה ריקה והודעה שהפונקציות עוד לא מומשו. זה יסתדר כשתממשו אותן.
 
 אפשר גם להריץ מהטרמינל של PyCharm (לשונית **Terminal** למטה), שנפתח ישר בתיקיית הפרויקט: `python -m tests.check_tokenizer`.
 
@@ -90,7 +90,7 @@
 כל הפקודות רצות מתיקיית `LLMClass`.
 
 - [ ] `python -m tests.check_tokenizer` מסתיים ב-11 מתוך 11
-- [ ] `python main.py` רץ בלי שגיאה ושומר את `data/processed/clean_text.txt`
+- [ ] `python main_tokenizer.py` רץ בלי שגיאה ושומר את `data/processed/clean_text.txt`
 - [ ] פתחתי את `clean_text.txt` וראיתי שהטקסט נראה הגיוני, עם `<EOS>` בסוף משפטים
 - [ ] השם והכיתה שלי כתובים בראש הקובץ
 - [ ] יש הערה במילים שלי ליד כל שורה ב-`clean`, כולל ההערה על `lower()`

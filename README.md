@@ -9,13 +9,16 @@ LLMClass/
 ├── ASSIGNMENT.docx          # הוראות הגשה (Word)
 ├── ASSIGNMENT.md            # הוראות הגשה (טקסט)
 ├── PROJECT_STRUCTURE.docx   # הסבר: מבנה פרויקט, מודולים וייבוא
-├── main.py                  # התוכנית הראשית
+├── main_tokenizer.py        # שלב 1: מריצים את ה-Tokenizer על הקורפוס
+├── main_ngrams.py           # שלב 2: בונים מילוני N-Gram (לא תלוי בשלב 1)
 ├── llmclass/                # הקוד שאתם כותבים
 │   ├── __init__.py
 │   ├── tokenizer.py         # שבוע 2: פונקציות ה-Tokenizer
 │   └── ngrams.py            # שבוע 3: מילוני N-Gram
 ├── data/
 │   ├── raw/                 # קבצי המקור. לא משנים אותם לעולם
+│   │   ├── sample_dirty.txt   # טקסט לדוגמה לשלב 1
+│   │   └── sample_tokens.txt  # טוקנים מוכנים לשלב 2
 │   └── processed/           # כאן הקוד שומר את התוצאות
 ├── tests/
 │   ├── check_tokenizer.py   # בדיקה עצמית ל-Tokenizer
@@ -29,8 +32,11 @@ LLMClass/
 
 ## לפני שמתחילים
 
-1. `main.py` רץ כרגע על קובץ הדוגמה `data/raw/sample_dirty.txt`. כשתורידו קורפוס גדול יותר, שימו אותו ב-`data/raw/` ועדכנו את `CORPUS_PATH` ב-`main.py`.
-2. ב-PyCharm: **File > Open**, ובחרו את התיקייה `LLMClass` עצמה (זו שיש בה את `main.py`).
+1. `main_tokenizer.py` רץ כרגע על קובץ הדוגמה `data/raw/sample_dirty.txt`. כשתורידו קורפוס גדול יותר, שימו אותו ב-`data/raw/` ועדכנו את `CORPUS_PATH`.
+2. `main_ngrams.py` קורא טוקנים מוכנים מ-`data/raw/sample_tokens.txt`, כך שהוא עובד גם לפני שה-Tokenizer שלכם גמור. אחרי ש-`main_tokenizer.py` שמר את `data/processed/clean_text.txt`, אפשר לעדכן את `TOKENS_PATH` לקובץ הזה.
+3. ב-PyCharm: **File > Open**, ובחרו את התיקייה `LLMClass` עצמה (זו שיש בה את `main_tokenizer.py`).
+
+בכל פונקציה בשלד יש שורת `return` זמנית שמחזירה ערך מהסוג הנכון, כדי שהתוכניות ירוצו בלי לקרוס עוד לפני שסיימתם. כשאתם מממשים פונקציה, מחקו את השורה הזמנית.
 
 הסבר מלא, כולל הורדה וחילוץ: ב-ASSIGNMENT.docx.
 
@@ -41,7 +47,8 @@ LLMClass/
 ```
 python -m tests.check_tokenizer     # בדיקה עצמית: צריך להגיע ל-11 מתוך 11
 python -m tests.check_ngrams        # בדיקה עצמית: צריך להגיע ל-12 מתוך 12
-python main.py                      # מנקה, שומר ל-data/processed/clean_text.txt ובונה מילוני N-Gram
+python main_tokenizer.py            # מנקה ושומר ל-data/processed/clean_text.txt
+python main_ngrams.py               # בונה מילוני 2,3,4,5-Gram
 python demos/tokenizer_demos.py 4    # הדגמה של שלב 4 מהשיעור
 python demos/ngram_demos.py 5        # בניית מילון 2-Gram צעד אחר צעד
 ```

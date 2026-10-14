@@ -78,6 +78,7 @@ def t_clean_he():
 def t_tokenize_type():
     out = tk.tokenize("שלום עולם.")
     assert isinstance(out, list), "tokenize צריכה להחזיר list, אבל החזירה " + type(out).__name__
+    expect(out, ["שלום", "עולם", "<EOS>"])
 
 
 def t_tokenize():
@@ -108,7 +109,7 @@ tests = [
     ("remove_punctuation", t_punct),
     ("normalize_spaces", t_spaces),
     ("clean בעברית", t_clean_he),
-    ("tokenize מחזירה list", t_tokenize_type),
+    ("tokenize – משפט קצר", t_tokenize_type),
     ("tokenize – דוגמה מלאה", t_tokenize),
     ("חזרות לא נמחקות", t_repeats_kept),
     ("save_tokens כותב קובץ תקין", t_save),
