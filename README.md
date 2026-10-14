@@ -6,8 +6,10 @@
 
 ```
 LLMClass/
-├── ASSIGNMENT.docx          # הוראות הגשה (Word)
-├── ASSIGNMENT.md            # הוראות הגשה (טקסט)
+├── ASSIGNMENT_tokenizer.docx  # הוראות הגשה: Tokenizer (Word)
+├── ASSIGNMENT_tokenizer.md    # אותו תוכן, טקסט
+├── ASSIGNMENT_ngrams.docx     # הוראות הגשה: N-Gram (Word)
+├── ASSIGNMENT_ngrams.md       # אותו תוכן, טקסט
 ├── PROJECT_STRUCTURE.docx   # הסבר: מבנה פרויקט, מודולים וייבוא
 ├── main_tokenizer.py        # שלב 1: מריצים את ה-Tokenizer על הקורפוס
 ├── main_ngrams.py           # שלב 2: בונים מילוני N-Gram (לא תלוי בשלב 1)
@@ -38,7 +40,7 @@ LLMClass/
 
 בכל פונקציה בשלד יש שורת `return` זמנית שמחזירה ערך מהסוג הנכון, כדי שהתוכניות ירוצו בלי לקרוס עוד לפני שסיימתם. כשאתם מממשים פונקציה, מחקו את השורה הזמנית.
 
-הסבר מלא, כולל הורדה וחילוץ: ב-ASSIGNMENT.docx.
+הסבר מלא, כולל הורדה, חילוץ ועבודה מהבית: ב-ASSIGNMENT_tokenizer.docx.
 
 ## איך מריצים
 
@@ -60,4 +62,4 @@ python demos/ngram_demos.py 5        # בניית מילון 2-Gram צעד אח�
 
 בשני הקבצים: אל תשנו שמות של פונקציות או פרמטרים.
 
-הגשת ה-Tokenizer ואיך היא נבדקת: **ASSIGNMENT.docx** (אותו תוכן גם ב-[ASSIGNMENT.md](ASSIGNMENT.md))
+מה מגישים ואיך זה נבדק: **ASSIGNMENT_tokenizer.docx** ו-**ASSIGNMENT_ngrams.docx** (אותו תוכן גם ב-[ASSIGNMENT_tokenizer.md](ASSIGNMENT_tokenizer.md) וב-[ASSIGNMENT_ngrams.md](ASSIGNMENT_ngrams.md))
