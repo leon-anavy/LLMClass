@@ -31,17 +31,17 @@ def stage1_windows():
 
 
 def stage2_dict_basics():
-    """שלב 2 – מילון: כמו HashMap ב-Java"""
-    ages = {}                      # Map<String, Integer> ages = new HashMap<>();
-    ages["דנה"] = 16               # ages.put("דנה", 16);
+    """שלב 2 – מילון: מפתח וערך"""
+    ages = {}                      # מילון ריק
+    ages["דנה"] = 16               # שומרים ערך תחת המפתח "דנה"
     ages["יואב"] = 17
     print(ages)                    # {'דנה': 16, 'יואב': 17}
-    print(ages["דנה"])             # ages.get("דנה")  ->  16
+    print(ages["דנה"])             # קוראים את הערך  ->  16
     ages["דנה"] = 17               # מפתח קיים: הערך מתחלף, לא מתווסף
     print(ages)
-    print(len(ages))               # ages.size()  ->  2
-    print("נועה" in ages)          # ages.containsKey("נועה")  ->  False
-    for name in ages:              # for (String name : ages.keySet())
+    print(len(ages))               # כמה מפתחות  ->  2
+    print("נועה" in ages)          # האם המפתח קיים?  ->  False
+    for name in ages:              # לולאה על כל המפתחות
         print(name, "->", ages[name])
 
 
