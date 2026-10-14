@@ -26,7 +26,7 @@ LLMClass/
 
 ## לפני שמתחילים
 
-1. שימו את `corpus_ngram_1000_words.txt` בתיקייה `data/raw/`.
+1. `main.py` רץ כרגע על קובץ הדוגמה `data/raw/sample_dirty.txt`. כשתורידו קורפוס גדול יותר, שימו אותו ב-`data/raw/` ועדכנו את `CORPUS_PATH` ב-`main.py`.
 2. ב-PyCharm: **File > Open**, ובחרו את התיקייה `LLMClass` עצמה (זו שיש בה את `main.py`).
 
 הסבר מלא, כולל הורדה וחילוץ: ב-ASSIGNMENT.docx.

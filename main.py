@@ -12,14 +12,17 @@ from llmclass.tokenizer import EOS, load_text, save_tokens, tokenize
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")   # כדי שעברית תודפס תקין גם ב-Windows
 
-CORPUS_PATH = os.path.join("data", "raw", "corpus_ngram_1000_words.txt")
+# כרגע התוכנית רצה על קובץ הדוגמה הקטן בעברית.
+# אחרי שתורידו קורפוס גדול יותר ותשימו אותו בתיקייה data/raw,
+# עדכנו כאן את שם הקובץ, למשל: "corpus_ngram_1000_words.txt"
+CORPUS_PATH = os.path.join("data", "raw", "sample_dirty.txt")
 OUTPUT_PATH = os.path.join("data", "processed", "clean_text.txt")
 
 
 def main():
     if not os.path.exists(CORPUS_PATH):
         print("לא נמצא הקובץ", CORPUS_PATH)
-        print("שימו את הקורפוס בתיקייה data/raw, והריצו מתיקיית LLMClass.")
+        print("בדקו שהקובץ נמצא בתיקייה data/raw, ושאתם מריצים מתיקיית LLMClass.")
         return
 
     raw = load_text(CORPUS_PATH)
