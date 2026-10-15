@@ -6,7 +6,6 @@
 
 ```
 LLMClass/
-├── PROJECT_STRUCTURE.docx   # הסבר: מבנה פרויקט, מודולים וייבוא
 ├── main_tokenizer.py        # שלב 1: מריצים את ה-Tokenizer על הקורפוס
 ├── main_ngrams.py           # שלב 2: בונים מילוני N-Gram (לא תלוי בשלב 1)
 ├── llmclass/                # הקוד שאתם כותבים
@@ -15,8 +14,9 @@ LLMClass/
 │   └── ngrams.py            # שבוע 3: מילוני N-Gram
 ├── data/
 │   ├── raw/                 # קבצי המקור. לא משנים אותם לעולם
-│   │   ├── sample_dirty.txt   # טקסט לדוגמה לשלב 1
-│   │   └── sample_tokens.txt  # טוקנים מוכנים לשלב 2
+│   │   ├── sample_dirty.txt     # טקסט לדוגמה לשלב 1
+│   │   ├── sample_dirty_en.txt  # טקסט לדוגמה באנגלית, למי שרוצה לנסות
+│   │   └── sample_tokens.txt    # טוקנים מוכנים לשלב 2
 │   └── processed/           # כאן הקוד שומר את התוצאות
 ├── tests/
 │   ├── check_tokenizer.py   # בדיקה עצמית ל-Tokenizer
