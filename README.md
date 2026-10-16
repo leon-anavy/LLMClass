@@ -5,8 +5,7 @@
 ## מבנה הפרויקט
 
 ```
-LLMClass/
-├── PROJECT_STRUCTURE.docx   # הסבר: מבנה פרויקט, מודולים וייבוא
+LLMClass-main/               # שורש הפרויקט
 ├── main_tokenizer.py        # שלב 1: מריצים את ה-Tokenizer על הקורפוס
 ├── main_ngrams.py           # שלב 2: בונים מילוני N-Gram (לא תלוי בשלב 1)
 ├── llmclass/                # הקוד שאתם כותבים
@@ -15,8 +14,9 @@ LLMClass/
 │   └── ngrams.py            # שבוע 3: מילוני N-Gram
 ├── data/
 │   ├── raw/                 # קבצי המקור. לא משנים אותם לעולם
-│   │   ├── sample_dirty.txt   # טקסט לדוגמה לשלב 1
-│   │   └── sample_tokens.txt  # טוקנים מוכנים לשלב 2
+│   │   ├── sample_dirty.txt     # טקסט לדוגמה לשלב 1
+│   │   ├── sample_dirty_en.txt  # טקסט לדוגמה באנגלית, למי שרוצה לנסות
+│   │   └── sample_tokens.txt    # טוקנים מוכנים לשלב 2
 │   └── processed/           # כאן הקוד שומר את התוצאות
 ├── tests/
 │   ├── check_tokenizer.py   # בדיקה עצמית ל-Tokenizer
@@ -32,7 +32,7 @@ LLMClass/
 
 1. `main_tokenizer.py` רץ כרגע על קובץ הדוגמה `data/raw/sample_dirty.txt`. כשתורידו קורפוס גדול יותר, שימו אותו ב-`data/raw/` ועדכנו את `CORPUS_PATH`.
 2. `main_ngrams.py` קורא טוקנים מוכנים מ-`data/raw/sample_tokens.txt`, כך שהוא עובד גם לפני שה-Tokenizer שלכם גמור. אחרי ש-`main_tokenizer.py` שמר את `data/processed/clean_text.txt`, אפשר לעדכן את `TOKENS_PATH` לקובץ הזה.
-3. ב-PyCharm: **File > Open**, ובחרו את התיקייה `LLMClass` עצמה (זו שיש בה את `main_tokenizer.py`).
+3. ב-PyCharm: **File > Open**, ובחרו את שורש הפרויקט: התיקייה שיש בה ישר את `llmclass`, `tests`, `data` ו-`main_tokenizer.py`. אחרי ההורדה היא נקראת `LLMClass-main`, ואין צורך לשנות את השם.
 
 בכל פונקציה בשלד יש שורת `return` זמנית שמחזירה ערך מהסוג הנכון, כדי שהתוכניות ירוצו בלי לקרוס עוד לפני שסיימתם. כשאתם מממשים פונקציה, מחקו את השורה הזמנית.
 
@@ -40,7 +40,7 @@ LLMClass/
 
 ## איך מריצים
 
-כל הפקודות רצות מהתיקייה `LLMClass`:
+כל הפקודות רצות משורש הפרויקט:
 
 ```
 python -m tests.check_tokenizer     # בדיקה עצמית: צריך להגיע ל-11 מתוך 11

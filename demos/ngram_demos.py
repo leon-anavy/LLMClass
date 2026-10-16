@@ -2,7 +2,7 @@
 """
 הדגמות חיות לשיעור "מבוא ל-N-Gram".
 כל שלב הוא פונקציה – מריצים אחת-אחת מול הכיתה:
-    python demos/ngram_demos.py 3      (מריץ רק את שלב 3)
+    python demos/ngram_demos.py 3      (מריץ רק את שלב 3, מ-1 עד 8)
     python demos/ngram_demos.py        (מריץ הכל)
 הקובץ לא משתמש בקוד שלכם, כך שהוא עובד גם לפני שהשלמתם את המשימה.
 """
@@ -125,7 +125,11 @@ STAGES = [stage1_windows, stage2_dict_basics, stage3_missing_key, stage4_list_va
 if __name__ == "__main__":
     chosen = STAGES
     if len(sys.argv) > 1:
-        chosen = [STAGES[int(sys.argv[1]) - 1]]
+        arg = sys.argv[1]
+        if not arg.isdigit() or not 1 <= int(arg) <= len(STAGES):
+            print("אין שלב כזה:", arg, " בחרו מספר בין 1 ל-" + str(len(STAGES)))
+            sys.exit(1)
+        chosen = [STAGES[int(arg) - 1]]
     for stage in chosen:
         print("=" * 20, stage.__doc__.strip(), "=" * 20)
         try:
