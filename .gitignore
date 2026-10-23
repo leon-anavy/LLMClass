@@ -6,3 +6,5 @@ venv/
 data/processed/*
 !data/processed/.gitkeep
 .idea/
+.claude/
+CLAUDE.md
