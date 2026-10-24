@@ -42,7 +42,8 @@ def main():
 
     bigrams = all_ngrams.get(2, {})
     print("מילים שפותחות משפט:", next_words(bigrams, EOS)[:10])
-    print("מה בא אחרי 'החתול':", next_words(bigrams, "החתול"))
+    # [:10] = רק 10 הראשונות. בקורפוס גדול מילה נפוצה מופיעה אלפי פעמים, וכל אחת נכנסת לרשימה.
+    print("מה בא אחרי 'החתול':", next_words(bigrams, "החתול")[:10])
 
 
 if __name__ == "__main__":
