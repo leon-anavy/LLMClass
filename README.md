@@ -11,7 +11,8 @@ LLMClass-main/               # שורש הפרויקט
 ├── llmclass/                # הקוד שאתם כותבים
 │   ├── __init__.py
 │   ├── tokenizer.py         # שבוע 2: פונקציות ה-Tokenizer
-│   └── ngrams.py            # שבוע 3: מילוני N-Gram
+│   ├── ngrams.py            # שבוע 3: מילוני N-Gram
+│   └── generate.py          # שבוע 5: יצירת טקסט מתוך המילונים
 ├── data/
 │   ├── raw/                 # קבצי המקור. לא משנים אותם לעולם
 │   │   ├── sample_dirty.txt     # טקסט לדוגמה לשלב 1
@@ -20,10 +21,12 @@ LLMClass-main/               # שורש הפרויקט
 │   └── processed/           # כאן הקוד שומר את התוצאות
 ├── tests/
 │   ├── check_tokenizer.py   # בדיקה עצמית ל-Tokenizer
-│   └── check_ngrams.py      # בדיקה עצמית ל-N-Gram
+│   ├── check_ngrams.py      # בדיקה עצמית ל-N-Gram
+│   └── check_generate.py    # בדיקה עצמית ליצירת טקסט
 └── demos/
     ├── tokenizer_demos.py   # ההדגמות משיעור הטוקניזציה
     ├── ngram_demos.py       # ההדגמות משיעור ה-N-Gram
+    ├── generate_demos.py    # ההדגמות משיעור יצירת הטקסט
     ├── where_am_i.py        # מדפיס מאיפה פייתון רץ ומחפש
     └── try_import.py        # ניסוי: מתי ייבוא מצליח ומתי לא
 ```
@@ -45,16 +48,19 @@ LLMClass-main/               # שורש הפרויקט
 ```
 python -m tests.check_tokenizer     # בדיקה עצמית: צריך להגיע ל-11 מתוך 11
 python -m tests.check_ngrams        # בדיקה עצמית: צריך להגיע ל-12 מתוך 12
+python -m tests.check_generate      # בדיקה עצמית: צריך להגיע ל-15 מתוך 15
 python main_tokenizer.py            # מנקה ושומר ל-data/processed/clean_text.txt
 python main_ngrams.py               # בונה מילוני 2,3,4,5-Gram
 python demos/tokenizer_demos.py 4    # הדגמה של שלב 4 מהשיעור
 python demos/ngram_demos.py 5        # בניית מילון 2-Gram צעד אחר צעד
+python demos/generate_demos.py 5     # Back-off: 3-Gram, אחרת 2-Gram, אחרת מילה אקראית
 ```
 
 ## המשימות
 
 - **שבוע 2:** השלימו את כל ה-TODO בקובץ `llmclass/tokenizer.py`.
 - **שבוע 3:** השלימו את כל ה-TODO בקובץ `llmclass/ngrams.py`. מפתח הוא n-1 מילים מחוברות ברווח, והערך הוא רשימת כל המילים שבאו אחריהן, **כולל חזרות**.
+- **שבוע 5:** השלימו את כל ה-TODO בקובץ `llmclass/generate.py`: בחירת המילה הבאה עם Back-off מ-5-Gram עד 2-Gram, משפט אחד, וטקסט של כמה משפטים.
 
-בשני הקבצים: אל תשנו שמות של פונקציות או פרמטרים.
+בכל הקבצים: אל תשנו שמות של פונקציות או פרמטרים.
 
